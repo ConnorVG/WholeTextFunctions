@@ -86,9 +86,9 @@ wtf:Execute(command)
 Currently, WTF only has support for a few data types. This list will grow once I create an optional 'less-light' version of WTF's parsing system.
 
 The current data types are as follows:
-* `source`: The whole command string (without the `commandName` included).
-* `remaining`: The rest of the command string left (`source` without any used arguments included).
-* `string`: A simple string.
+* `source`: The whole command string (without the `commandName` included) as a Lua string.
+* `remaining`: The rest of the command string left (`source` without any used arguments included) as a Lua string.
+* `string`: A simple Lua string.
 * `number`: Any Lua number.
 * `bool`: Simply put, Lua's booleans (`true` or `false`).
 
