@@ -60,3 +60,5 @@ end)
 ### Adding an Alias
 
 ### Executing a Command
+
+*Note: During this README, we imagine the variable `wtf` is an instance of `WholeTextFunctions`.*
