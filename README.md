@@ -81,4 +81,15 @@ To execute a command, all we need to do is (where `command` is your command stri
 wtf:Execute(command)
 ```
 
+### Argument Types
+
+Currently, WTF only has support for a few data types. This list will grow once I create an optional 'less-light' version of WTF's parsing system.
+
+The current data types are as follows:
+* `source`: The whole command string (without the `commandName` included).
+* `remaining`: The rest of the command string left (`source` without any used arguments included).
+* `string`: A simple string.
+* `number`: Any Lua number.
+* `bool`: Simply put, Lua's booleans (`true` or `false`).
+
 *Note: During this README, we imagine the variable `wtf` is an instance of `WholeTextFunctions`.*
