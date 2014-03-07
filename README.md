@@ -13,11 +13,11 @@ An example command would be as so:
 
 Let's break this down.
 
-## `commandName`
+#### `commandName`
 
-## `argName:argType`
+##### `argName:argType`
 
-## `[argName:argType]`
+###### `[argName:argType]`
 
 ### Adding a Command
 
