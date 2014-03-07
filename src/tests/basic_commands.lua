@@ -24,7 +24,8 @@ wtf:AddCommand("autocomplete [Limit:number] [Text:remaining]", function(wtf, lim
 	limit = limit == "nil" and 5 or limit
 	local ac = wtf:AutoComplete(src, limit)
 
-	PrintTable(ac)
+--	TODO: Write function 'PrintTable( table )'
+--	PrintTable(ac)
 end)
 wtf:AddAlias("autocomplete", "ac")
 
@@ -32,7 +33,8 @@ wtf:AddCommand("aliases [Limit:number] [Text:remaining]", function(wtf, limit, s
 	limit = limit == "nil" and 5 or limit
 	local a = wtf:GetAliases(src, limit)
 
-	PrintTable(a)
+--	TODO: Write function 'PrintTable( table )'
+--	PrintTable(a)
 end)
 wtf:AddAlias("aliases", "al")
 
