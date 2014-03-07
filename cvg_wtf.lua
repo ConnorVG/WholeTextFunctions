@@ -80,10 +80,6 @@ local function split_special(txt, del, del2)
 	return new
 end
 
-local function pad(l, r, len, char)
-    return l .. rep(char, len - #l - #r) .. r
-end
-
 
 --	--	--	--
 --	Globals	--
@@ -441,7 +437,8 @@ wtf:AddCommand("commands", function(wtf, src)
 		while i <= #commands do
 			local command = commands[i]
 
-			print(pad('', i .. ':', pl, ' '), '"' .. command[1] .. '"')
+			local idx_str = i .. ':'
+			print(rep(' ', pl - #idx_str) .. idx_str, '"' .. command[1] .. '"')
 
 			local syntax = '"' .. (command[2] and command[2] or command[1]) .. '"'
 			print(str_pad, "Syntax:")
@@ -472,7 +469,8 @@ wtf:AddCommand("commands", function(wtf, src)
 		while i <= #aliases do
 			local alias = aliases[i]
 
-			print(pad('', i .. ':', pl, ' '), "Alias:")
+			local idx_str = i .. ':'
+			print(rep(' ', pl - #idx_str) .. idx_str, "Alias:")
 			print(str_pad, str_pad, alias[1])
 
 			print(str_pad, "Base:")
