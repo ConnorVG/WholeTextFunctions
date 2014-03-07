@@ -23,16 +23,16 @@ Let's break this down.
 
 	The first part, described as `argName`, is exactly what you would expect (the name of the argument). This is useful because if the user tries to execute a command with incorrect syntax we can simply return the syntax and the argument name that the user messed up on.
 	
-	The second part, described as `argType`, is the data type of the argument (please refer to [Argument Types](#Argument Types) for all available data types). This is used to check the syntax of a command and for ensuring the correct data type gets to the the final function call.
+	The second part, described as `argType`, is the data type of the argument (please refer to [Argument Types](#argument-types) for all available data types). This is used to check the syntax of a command and for ensuring the correct data type gets to the the final function call.
 
 * ##### `[argName:argType]`
-	This is an optional argument for a command (please refer to [argName:argType](#argName:argType) for more information regarding arguments). The only difference between this and a regular argument is that this is optional therefore non-required for the user to pass syntax.
+	This is an optional argument for a command (please refer to [argName:argType](#argNameargType) for more information regarding arguments). The only difference between this and a regular argument is that this is optional therefore non-required for the user to pass syntax.
 
 	If this argument is ignored by the user, a default value of `"nil"` will be passed to the command's function.
 
 ### Adding a Command
 
-Adding a command is extremely simple, as-long as you understand the syntax (please refer to [Understanding the Syntax](#Understanding the Syntax) to learn about the syntax).
+Adding a command is extremely simple, as-long as you understand the syntax (please refer to [Understanding the Syntax](#understanding-the-syntax) to learn about the syntax).
 
 All you need to do is:
 * Think of a command name, let's use `print`.
@@ -65,7 +65,7 @@ Adding an alias is even more simple than adding a command.
 
 All you need to do is:
 * Think of an alias name, let's use `p`.
-* Think of the command OR alias you wish to create an alias for, let's use `print` (see [Adding a Command](#Adding a Command) for more information on this command).
+* Think of the command OR alias you wish to create an alias for, let's use `print` (see [Adding a Command](#adding-a-command) for more information on this command).
 
 To add this alias, all we need to do is:
 ```lua
