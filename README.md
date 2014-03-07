@@ -24,6 +24,7 @@ Let's break this down.
 	The second part, described as `argType`, is the data type of the argument (please refer to [Argument Types](#Argument Types) for all available data types). This is used to check the syntax of a command and for ensuring the correct data type gets to the the final function call.
 
 * ##### `[argName:argType]`
+	This is an optional argument for a command (please refer to [argName:argType](#argName:argType) for more information regarding arguments). The only difference between this and a regular argument is that this is optional therefore non-required for the user to pass syntax.
 
 ### Adding a Command
 
