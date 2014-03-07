@@ -215,5 +215,5 @@ pip-log.txt
 .mr.developer.cfg
 
 #My Shizzle
-main.lua
-conf.lua
+src/main.lua
+src/conf.lua

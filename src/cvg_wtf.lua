@@ -81,6 +81,7 @@ local function split_special(txt, del, del2)
 end
 
 
+
 --	--	--	--
 --	Globals	--
 --	--	--	--
@@ -393,7 +394,7 @@ end
 
 
 --	--	--	--	--	--
---	Test functions	--
+--	Global Accessor	--
 --	--	--	--	--	--
 
 local wtf = WholeTextFunctions.New()
