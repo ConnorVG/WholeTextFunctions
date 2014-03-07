@@ -16,6 +16,8 @@ Let's break this down.
 * ##### `commandName`
 	This is the name of the command and subsequently what is used to define which command to execute. For example, if a command with no arguments had a name of `test` you could simply execute said command via `wtf:Execute(test)`.
 
+	*Note: During execution, `commandName` is case-insensitive!*
+
 * ##### `argName:argType`
 	This is an argument for a command, this has two parts to it. 
 
@@ -27,6 +29,33 @@ Let's break this down.
 	This is an optional argument for a command (please refer to [argName:argType](#argName:argType) for more information regarding arguments). The only difference between this and a regular argument is that this is optional therefore non-required for the user to pass syntax.
 
 ### Adding a Command
+
+Adding a command is extremely simple, as-long as you understand the syntax (please refer to [Understanding the Syntax](#Understanding the Syntax) to learn about the syntax).
+
+All you need to do is:
+* Think of a command name, let's use `print`.
+* Think of which arguments we may require (plus if they should be optional), let's use `[indentLevel:number] message:remaining`.
+* Think of a function of which we want to call on execution of the command, let's use:
+```lua
+function(wtf, indent, message)
+	if indent ~= "nil" then
+		message = string.rep('-', indent - #message) .. message
+	end
+
+	print(message)
+end
+```
+
+To add this command, all we need to do is:
+```lua
+wtf:AddCommand("print [indentLevel:number] message:remaining", function(wtf, indent, message)
+	if indent ~= "nil" then
+		message = string.rep('-', indent - #message) .. message
+	end
+
+	print(message)
+end)
+```
 
 ### Adding an Alias
 
