@@ -74,4 +74,11 @@ wtf:AddAlias('print', 'p')
 
 ### Executing a Command
 
+The method of which you decide to execute a command will be entirely based on your implementation of WTF. The only thing all implementations will have in common is the base command execution.
+
+To execute a command, all we need to do is (where `command` is your command string. For example: `print Hello!`):
+```lua
+wtf:Execute(command)
+```
+
 *Note: During this README, we imagine the variable `wtf` is an instance of `WholeTextFunctions`.*
