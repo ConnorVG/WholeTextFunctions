@@ -40,7 +40,7 @@ local ARG_DEFINITIONS = {
 local remove, insert = table.remove, table.insert
 
 --	Strings
-local find, sub = string.find, string.sub
+local find, sub, rep = string.find, string.sub, string.rep
 
 local function split(txt, del)
 	del = del or "\r*\n\r*"
@@ -80,14 +80,8 @@ local function split_special(txt, del, del2)
 	return new
 end
 
-local function pad_left(str, len, char)
-    if char == nil then char = ' ' end
-    return string.rep(char, len - #str) .. str
-end
-
-local function pad_right(str, len, char)
-    if char == nil then char = ' ' end
-    return str .. string.rep(char, len - #str)
+local function pad(l, r, len, char)
+    return l .. rep(char, len - #l - #r) .. r
 end
 
 
@@ -97,6 +91,7 @@ end
 
 local WTF_CMD_SUCCESS, WTF_CMD_FAIL = 0, 1
 _G.WTF_CMD_SUCCESS, _G.WTF_CMD_FAIL = WTF_CMD_SUCCESS, WTF_CMD_FAIL
+
 
 
 --	--	--	--	--	--	--	--
@@ -440,13 +435,13 @@ wtf:AddCommand("commands", function(wtf, src)
 		print("[[--", "Commands", "--]]")
 
 		local commands, i = wtf.Commands, 1
-		local pad = #tostring(#commands) + 2
-		local str_pad = pad_left("", pad, " ")
+		local pl = #tostring(#commands) + 2
+		local str_pad = rep(' ', pl)
 
 		while i <= #commands do
 			local command = commands[i]
 
-			print(pad_left(i .. ":", pad, " "), '"' .. command[1] .. '"')
+			print(pad('', i .. ':', pl, ' '), '"' .. command[1] .. '"')
 
 			local syntax = '"' .. (command[2] and command[2] or command[1]) .. '"'
 			print(str_pad, "Syntax:")
@@ -472,12 +467,12 @@ wtf:AddCommand("commands", function(wtf, src)
 		print("[[--", " Aliases", "--]]")
 
 		local aliases, i = wtf.Aliases, 1
-		local pad = #tostring(#aliases) + 2
-		local str_pad = pad_left("", pad, " ")
+		local pl = #tostring(#aliases) + 2
+		local str_pad = rep(' ', pl)
 		while i <= #aliases do
 			local alias = aliases[i]
 
-			print(pad_left(i .. ":", pad, " "), "Alias:")
+			print(pad('', i .. ':', pl, ' '), "Alias:")
 			print(str_pad, str_pad, alias[1])
 
 			print(str_pad, "Base:")
