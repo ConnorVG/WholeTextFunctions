@@ -28,6 +28,8 @@ Let's break this down.
 * ##### `[argName:argType]`
 	This is an optional argument for a command (please refer to [argName:argType](#argName:argType) for more information regarding arguments). The only difference between this and a regular argument is that this is optional therefore non-required for the user to pass syntax.
 
+	If this argument is ignored by the user, a default value of `"nil"` will be passed to the command's function.
+
 ### Adding a Command
 
 Adding a command is extremely simple, as-long as you understand the syntax (please refer to [Understanding the Syntax](#Understanding the Syntax) to learn about the syntax).
