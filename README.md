@@ -40,7 +40,7 @@ All you need to do is:
 * Think of a function of which we want to call on execution of the command, let's use:
 ```lua
 function(wtf, indent, message)
-	if indent ~= "nil" then
+	if indent ~= 'nil' then
 		message = string.rep('-', indent - #message) .. message
 	end
 
@@ -50,7 +50,7 @@ end
 
 To add this command, all we need to do is:
 ```lua
-wtf:AddCommand("print [indentLevel:number] message:remaining", function(wtf, indent, message)
+wtf:AddCommand('print [indentLevel:number] message:remaining', function(wtf, indent, message)
 	if indent ~= "nil" then
 		message = string.rep('-', indent - #message) .. message
 	end
@@ -60,6 +60,17 @@ end)
 ```
 
 ### Adding an Alias
+
+Adding an alias is even more simple than adding a command.
+
+All you need to do is:
+* Think of an alias name, let's use `p`.
+* Think of the command OR alias you wish to create an alias for, let's use `print` (see [Adding a Command](#Adding a Command) for more information on this command).
+
+To add this alias, all we need to do is:
+```lua
+wtf:AddAlias('print', 'p')
+```
 
 ### Executing a Command
 
