@@ -59,7 +59,7 @@ wtf:AddCommand('print [indentLevel:number] message:remaining', function(wtf, ind
 end)
 ```
 
-	*Note: The first variable passed to the command's function is always the instance of WTF used to execute said function!*
+*Note: The first variable passed to the command's function is always the instance of WTF used to execute said function!*
 
 ### Adding an Alias
 
