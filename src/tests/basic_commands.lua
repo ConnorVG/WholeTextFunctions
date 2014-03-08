@@ -86,7 +86,9 @@ wtf:AddCommand("autocomplete [Limit:number] [Text:remaining]", function(wtf, lim
 	limit = limit == "nil" and 5 or limit
 	local ac = wtf:AutoComplete(src, limit)
 
-	print(tabletostring(ac))
+--	Avoid cnt
+	local str = tabletostring(ac)
+	print(str)
 end)
 wtf:AddAlias("autocomplete", "ac")
 
@@ -94,7 +96,9 @@ wtf:AddCommand("aliases [Limit:number] [Text:remaining]", function(wtf, limit, s
 	limit = limit == "nil" and 5 or limit
 	local a = wtf:GetAliases(src, limit)
 
-	print(tabletostring(a))
+--	Avoid cnt
+	local str = tabletostring(a)
+	print(str)
 end)
 wtf:AddAlias("aliases", "al")
 
