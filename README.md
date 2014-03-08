@@ -94,4 +94,8 @@ The current data types are as follows:
 * `number`: Any Lua number.
 * `bool`: Simply put, Lua's booleans (`true` or `false`).
 
+### Examples
+
+All current examples can be found within the `src/examples` directory. Please note, most of these examples use imaginary environments and are not meant to just work out of the box. E.G: In the `player_input.lua` example, we make a function `recievePlayerInput(input)` which, in a real world scenario, would actually be much different and specific to the usage.
+
 *Note: During this README, we imagine the variable `wtf` is an instance of `WholeTextFunctions`.*
