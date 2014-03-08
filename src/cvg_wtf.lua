@@ -4,11 +4,11 @@
 
 --	Levels
 local LEVEL_NONE, LEVEL_INFO, LEVEL_ERROR = 1, 2, 3
-local DEBUG_LEVEL = LEVEL_ERROR
+local DEBUG_LEVEL = LEVEL_NONE
 
 --	Outputting
 local function debug_out(level, message)
-	if DEBUG_LEVEL < level then return end
+	if DEBUG_LEVEL < level then return message end
 
 	print(level == LEVEL_INFO and "INFO:" or "ERROR:", message)
 	return message
