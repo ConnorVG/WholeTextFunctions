@@ -33,5 +33,11 @@ function love.conf(t)
                                                     -- enough to run physics, that's cute ^_^
 end
 
+--  The whole WTF module
 require('cvg_wtf')
+
+--  The tests
 require('tests/basic_commands')
+
+--  The examples
+require('examples/player_input')
