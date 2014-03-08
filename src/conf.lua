@@ -40,4 +40,4 @@ require('cvg_wtf')
 require('tests/basic_commands')
 
 --  The examples
-require('examples/player_input')
+--  require('examples/player_input')

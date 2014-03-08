@@ -2,7 +2,69 @@
 --	Locals	--
 --	--	--	--
 
-local sub, rep = string.sub, string.rep
+local sub, rep, format = string.sub, string.rep, string.format
+
+
+
+--	--	--	--	--	--	--
+--	Courtesy of Vercas	--
+--	(github.com/Vercas)	--
+--	--	--	--	--	--	--
+
+local function prettystring(data)
+	if type(data) == "string" then
+		return format("%q", data)
+	else
+		return tostring(data)
+	end
+end
+
+local colkeys = { a = true, r = true, g = true, b = true}
+local function isColor(tab)
+	local hits = 0
+
+	for k, _ in pairs(tab) do
+		if colkeys[k] then
+			hits = hits + 1
+		else
+			return false
+		end
+	end
+
+	return hits == 4
+end
+
+local function tabletostring(t, indent, done)
+	done = done or {}
+	indent = indent or 0
+	local str, cnt = "", 0
+
+	for key, value in pairs(t) do
+		str = str .. rep ("    ", indent)
+
+		if type(value) == "table" and not done[value] then
+			done[value] = true
+
+			local ts = tostring(value)
+
+			if isColor(value) then
+				str = str .. prettystring(key) .. " = " .. string.format("# %X %X %X %X", value.a, value.r, value.g, value.b) .. "\n"
+			elseif ts:sub(1, 9) == "table: 0x" then
+				local _str, _cnt = tabletostring(value, indent + 1, done)
+
+				str = str .. prettystring(key) .. ":" .. ((_cnt > 0) and ("\n" .. _str) or " empty table\n")
+			else
+				str = str .. prettystring(key) .. " = " .. ts .. "\n"
+			end
+		else
+			str = str .. prettystring(key) .. " = " .. prettystring(value) .. "\n"
+		end
+
+		cnt = cnt + 1
+	end
+
+	return str, cnt
+end
 
 
 
@@ -24,8 +86,7 @@ wtf:AddCommand("autocomplete [Limit:number] [Text:remaining]", function(wtf, lim
 	limit = limit == "nil" and 5 or limit
 	local ac = wtf:AutoComplete(src, limit)
 
---	TODO: Write function 'PrintTable( table )'
---	PrintTable(ac)
+	print(tabletostring(ac))
 end)
 wtf:AddAlias("autocomplete", "ac")
 
@@ -33,8 +94,7 @@ wtf:AddCommand("aliases [Limit:number] [Text:remaining]", function(wtf, limit, s
 	limit = limit == "nil" and 5 or limit
 	local a = wtf:GetAliases(src, limit)
 
---	TODO: Write function 'PrintTable( table )'
---	PrintTable(a)
+	print(tabletostring(a))
 end)
 wtf:AddAlias("aliases", "al")
 
