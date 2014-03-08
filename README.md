@@ -5,10 +5,8 @@ WTF is a Lua library for string-based commands. This is especially useful in sit
 
 Licensing
 ---------
-We require that all submissions to the Windower/Lua repository be licensed under the BSD license, reproduced below. To do this, simply place the license text in a comment at the top of each of your source files, and replace `<year>`, `<addon name>` and both instances of `<your name>` with appropriate values.
-
 ```
-Copyright (c) <year>, <your name>
+Copyright (c) 2014, Connor S. Parks and Alexandru Maftei
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -19,14 +17,14 @@ modification, are permitted provided that the following conditions are met:
     * Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
-    * Neither the name of <addon name> nor the
+    * Neither the name of WholeTextFunctions (WTF) nor the
       names of its contributors may be used to endorse or promote products
       derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL <your name> BE LIABLE FOR ANY
+DISCLAIMED. IN NO EVENT SHALL Connor S. Parks or Alexandru Maftei BE LIABLE FOR ANY
 DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
